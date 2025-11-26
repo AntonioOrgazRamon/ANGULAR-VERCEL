@@ -36,6 +36,10 @@ export class PersonajesComponent implements OnInit {
 
     this.personajesService.getPersonajes(url).subscribe({
       next: (response: ApiResponse) => {
+        console.log('Respuesta API:', response);
+        console.log('Primer personaje:', response.items[0]);
+        console.log('Tiene originPlanet?', response.items[0]?.originPlanet);
+        console.log('Tiene transformations?', response.items[0]?.transformations);
         this.personajes.set(response.items);
         this.nextUrl.set(response.links.next);
         this.previousUrl.set(response.links.previous);
