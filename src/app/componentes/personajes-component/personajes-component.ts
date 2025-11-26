@@ -1,18 +1,19 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { PersonajesService } from '../../services/personajes.service';
 import { Personaje, ApiResponse } from '../../models/personaje.interface';
 
 @Component({
   selector: 'app-personajes-component',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './personajes-component.html',
   styleUrl: './personajes-component.css',
 })
 export class PersonajesComponent implements OnInit {
   private readonly personajesService = inject(PersonajesService);
   private readonly router = inject(Router);
+  protected readonly currentYear = new Date().getFullYear();
 
   // Signals para manejo reactivo de estado
   personajes = signal<Personaje[]>([]);

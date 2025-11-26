@@ -1,12 +1,12 @@
 import { Component, OnInit, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { PersonajesService } from '../../services/personajes.service';
 import { Personaje } from '../../models/personaje.interface';
 
 @Component({
   selector: 'app-personaje-detalles-component',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
   templateUrl: './personaje-detalles-component.html',
   styleUrl: './personaje-detalles-component.css',
 })
@@ -14,6 +14,7 @@ export class PersonajeDetallesComponent implements OnInit {
   private readonly route = inject(ActivatedRoute);
   private readonly router = inject(Router);
   private readonly personajesService = inject(PersonajesService);
+  protected readonly currentYear = new Date().getFullYear();
 
   personaje = signal<Personaje | null>(null);
   loading = signal<boolean>(true);

@@ -1,0 +1,44 @@
+.navbar {
+    border-bottom: 3px solid #ff6b00;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+}
+
+.navbar-brand {
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+}
+
+.nav-link {
+    position: relative;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem !important;
+}
+
+.nav-link:hover {
+    color: #ff6b00 !important;
+}
+
+.nav-link.active {
+    color: #ff6b00 !important;
+    font-weight: bold;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 1rem;
+    right: 1rem;
+    height: 3px;
+    background: linear-gradient(90deg, #ff6b00, #ff9500);
+    border-radius: 2px;
+}
+

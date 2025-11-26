@@ -1,0 +1,14 @@
+footer {
+    border-top: 3px solid #ff6b00;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%) !important;
+}
+
+footer h5, footer h6 {
+    color: #ff6b00;
+}
+
+footer a:hover {
+    color: #ff9500 !important;
+    text-decoration: underline !important;
+}
+
