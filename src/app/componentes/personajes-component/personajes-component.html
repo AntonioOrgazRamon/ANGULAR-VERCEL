@@ -75,32 +75,9 @@
                             <!-- Descripción -->
                             <p class="card-text personaje-description">{{ personaje.description }}</p>
 
-                            <!-- Planeta de Origen -->
-                            @if (personaje.originPlanet) {
-                                <div class="origin-planet mb-3">
-                                    <h6 class="origin-title">Planeta de Origen</h6>
-                                    <div class="origin-info">
-                                        <span class="origin-name">{{ personaje.originPlanet.name }}</span>
-                                    </div>
-                                </div>
-                            }
-
-                            <!-- Transformaciones -->
-                            @if (personaje.transformations && personaje.transformations.length > 0) {
-                                <div class="transformations mt-auto">
-                                    <h6 class="transformations-title">Transformaciones</h6>
-                                    <div class="transformations-list">
-                                        <!-- aqui iran varias -->
-                                        @for (trans of personaje.transformations; track trans.id) {
-                                            <div class="transformation-badge">
-                                                <img [src]="trans.image" [alt]="trans.name" class="trans-img">
-                                            </div>
-                                        }
-                                    </div>
-                                </div>
-                            }
-                            <br>
-                            <button class="btn btn-primary" (click)="verDetalles(personaje.id)">Ver Detalles</button>
+                            <div class="mt-auto">
+                                <button class="btn btn-primary w-100" (click)="verDetalles(personaje.id)">Ver Detalles</button>
+                            </div>
                         </div>
                     </div>
                 </div>
